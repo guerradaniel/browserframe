@@ -11,7 +11,7 @@
 
 <body class="container">
 
-    <h1 class="text-center">Negociações</h1>
+    <h1 class="text-center mt-3">Negociações</h1>
 
     <form class="form">
 
@@ -63,9 +63,15 @@
 
     <script src="js/app/models/Negociacao.js"></script>
     <script>
-        var n1 = new Negociacao(new Date(), 5, 700);
-        var volume = n1.obtemVolume();
-        console.log(volume);
+        var hoje = new Date();
+
+        var n1 = new Negociacao(hoje, 5, 700);
+
+        console.log(n1.data);
+
+        hoje.setDate(11);
+
+        console.log(n1.data);
     </script>
 
 </body>
