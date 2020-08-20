@@ -13,6 +13,8 @@ class Negociacao {
     get data() {
         return new Date(this._data.getTime());
     }
+    // Testar tirar o getTime para ver se o mesmo funciona
+
 
     get quantidade() {
         return this._quantidade;
