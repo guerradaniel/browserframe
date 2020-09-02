@@ -7,15 +7,16 @@ class NegociacaoController {
         this._inputQuantidade = $("#quantidade");
         this._inputValor = $("#valor");
         this._listaNegociacoes = new ListaNegociacoes();
+        this._negociacoesView = new NegociacoesView($("#negociacoesView"));
+
+        this._negociacoesView.update();
     }
 
     adiciona(event) {
-
         event.preventDefault();
 
         this._listaNegociacoes.adiciona(this._criaNegociacao());
         this._limpaFormulario();
-
     }
 
     _criaNegociacao() {
@@ -50,5 +51,5 @@ class NegociacaoController {
 // Usei o  console.log(DateHelper.dataParaTexto(negociacao.data));
 // para mostrar data no console.
 
-// Usei "_" no _limpaFormulario para dizer que ele só pode
+// Usei "_" no _limpaFormulario e _criaNegociacao para dizer que ele só pode
 // ser chamado pela própria classe. 
