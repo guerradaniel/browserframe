@@ -9,13 +9,13 @@ class NegociacaoController {
         this._listaNegociacoes = new ListaNegociacoes();
         this._negociacoesView = new NegociacoesView($("#negociacoesView"));
 
-        this._negociacoesView.update();
+        this._negociacoesView.update(this._listaNegociacoes);
     }
 
     adiciona(event) {
         event.preventDefault();
-
         this._listaNegociacoes.adiciona(this._criaNegociacao());
+        this._negociacoesView.update(this._listaNegociacoes);
         this._limpaFormulario();
     }
 
@@ -32,7 +32,7 @@ class NegociacaoController {
         this._inputQuantidade.value = 1;
         this._inputValor.value = 0.0;
 
-        this._inputQuantidade.focus();
+        this._inputData.focus();
     }
 
 }
